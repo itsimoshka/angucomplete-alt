@@ -739,8 +739,8 @@
       scope.inputType = attrs.type ? attrs.type : 'text';
 
       // set strings for "Searching..." and "No results"
-      scope.textSearching = attrs.textSearching ? attrs.textSearching : TEXT_SEARCHING;
-      scope.textNoResults = attrs.textNoResults ? attrs.textNoResults : TEXT_NORESULTS;
+      scope.textSearching = scope.textSearching ? scope.textSearching : TEXT_SEARCHING;
+      scope.textNoResults = scope.textNoResults ? scope.textNoResults : TEXT_NORESULTS;
       displaySearching = scope.textSearching === 'false' ? false : true;
       displayNoResults = scope.textNoResults === 'false' ? false : true;
 
@@ -801,7 +801,9 @@
         focusOut: '&',
         focusIn: '&',
         inputName: '@',
-        focusFirst: '@'
+        focusFirst: '@',
+        textSearching:'@',
+        textNoResults:'@'
       },
       templateUrl: function(element, attrs) {
         return attrs.templateUrl || TEMPLATE_URL;
